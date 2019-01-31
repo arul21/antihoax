@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Stop Hoax",
+  "short_name": "Stop Hoax",
+  "description": "Laporkan link yang menurut anda mengandung konten negatif",
+  "version": "1.0",
+  "icons": {
+    "19": "/img/icon19.png",
+    "38": "/img/icon38.png",
+    "128": "/img/icon128.png",
+    "256": "/img/icon256.png"
+  },
+  "background": {
+    "scripts": [
+      "/js/jQuery.js",
+      "/js/popup.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Check URL for Negative Content"
+  },
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "webRequest",
+    "webNavigation",
+    "storage"
+  ]
+
+  
+ 
+}

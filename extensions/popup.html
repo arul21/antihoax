@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stop Hoax</title>
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div id="alert">
+    
+      </div>
+  <div class="modal-header">
+    <h1 class="logo">
+      <img src="icon.png" alt="Stop Hoax Launcher" class="logo-icon"> Anti Hoax <span class="version">(1.0)</span>
+    </h1>
+  </div>
+  <div id="urlp" class="pl-3 pr-3">
+  </div>
+  <div id="result" class="pl-3 pr-3 pb-3" >
+    <div id="reg" class="text-center">
+     
+    </div><br>
+    <div id="test" class="text-center" >
+      <button type="button" id="myButton" class="btn btn-outline-danger center">Laporkan?</button>
+    </div>
+  </div>
+  <div id="alert">
+    
+  </div>
+
+  <div class="container" id="register">
+    <div class="form-group" id="urlx">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControl">Title</label>
+      <input class="form-control text-center" type="text" id="title" placeholder="Title" required>
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput3">Category</label>
+        <select class="form-control" id="djaduls">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Pelapor</label>
+        <input type="text" class="form-control text-center" id="reporter" placeholder="Nama Pelapor">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control text-center" id="email" aria-describedby="emailHelp" placeholder="Email">
+      </div>
+      <!-- <div class="form-group">
+        <label for="exampleFormControlInput2">No.Hp</label>
+        <input type="text" class="form-control text-center" id="nohp" placeholder="No Handphone">
+      </div> -->
+      <div class="text-center">
+        <button type="button" id="report" class="btn btn-primary text-center">report!</button>
+      </div>
+    </form>
+  </div>
+  <br>
+
+  <div class="modal-icons">
+    <div class="flex-container">
+      <div class="flex">
+        <a href="#" id="urlinfo">
+          <i class="fa fa-home"></i>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="#" id="myIp">
+          <i class="fa fa-info-circle"></i>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="http://localhost:8080" target="_blank">
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="http://localhost:8080" target="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="http://localhost:8080" target="_blank">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+  <script src="js/jQuery.js"></script>
+  <script src="js/popup.js"></script>
+  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+</body>
+</html>
