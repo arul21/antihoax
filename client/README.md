@@ -1,23 +1,11 @@
-# Vuestic Admin Dashboard
+# antiHoax Admin Dashboard
 
-Responsive admin dashboard template built with [Vue.js](https://vuejs.org) and [Bootstrap 4](https://v4-alpha.getbootstrap.com). Developed by [Epicmax](https://epicmax.co). Designed by [Vasili Savitski](https://xxsavitski.myportfolio.com/)
-
-Subscribe to our [newsletter](https://epicmax.co/newsletter) to get Vuestic updates, our team's stories and Vue.js materials hand-picked by Epicmax.
-
-<p align="center">
-  <a href="https://vuestic.epicmax.co" target="_blank">
-    <img src="https://i.imgur.com/pMuJVVc.png" align="center" width="888px"/>
-  </a>
-</p>
-
-## Demo
-Check it out [live](https://vuestic.epicmax.co)!
 
 ## Prerequisites:
 
 - [Node.js](https://nodejs.org/en/) (at least 4.x, 8.x recommended)
 - npm version 3+ and [Git](https://git-scm.com/).
-- [vuestic-installer](https://github.com/epicmaxco/vuestic-installer) `npm install vuestic-installer -g`.
+- [vuestic-installer]`npm install vuestic-installer -g`.
 
 ## Browser Support
 * Latest Chrome, Firefox, Safari, Edge, IE11+
