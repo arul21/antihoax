@@ -79,7 +79,8 @@ import {mapActions, mapState} from 'vuex'
 import queryParams from '../../vuestic-theme/vuestic-components/vuestic-datatable/data/query-params';
 import axios from 'axios'
 import swal from 'sweetalert'
-const baseUrl = `http://localhost:3000`
+// const baseUrl = `http://localhost:3000`
+const baseUrl = `http://35.240.200.66`
 Vue.component('badge-column', BadgeColumn)
 export default {
     name: 'Verified',
@@ -88,7 +89,7 @@ export default {
     },
     data() {
         return {
-            apiUrl: `http://localhost:3000/report/verify`,
+            apiUrl: baseUrl+`/report/verify`,
             apiMode: true,
             tableFields: FieldsDef.tableFields,
             sortFunctions: FieldsDef.sortFunctions,

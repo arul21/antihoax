@@ -9,7 +9,8 @@ import VueEvents from 'vue-events'
 Vue.use(VueEvents)
 
 import * as getters from './getters'
-const baseUrl = `http://localhost:3000`
+// const baseUrl = `http://localhost:3000`
+const baseUrl = `http://35.240.200.66`
 Vue.use(Vuex)
 
 const store = new Vuex.Store({

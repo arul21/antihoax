@@ -73,7 +73,8 @@ import {mapActions, mapState} from 'vuex'
 import swal from 'sweetalert';
 import axios from 'axios'
 
-const baseUrl = `http://localhost:3000`
+// const baseUrl = `http://localhost:3000`
+const baseUrl = `http://35.240.200.66`
 Vue.component('badge-column', BadgeColumn)
 
 export default {
@@ -89,7 +90,7 @@ export default {
     },
     data () {
         return {
-            apiUrl: baseUrl+'/category/api',
+            apiUrl: 'http://35.240.200.66/category/api',
             apiMode: true,
             defaultTablePerPage: 30,
             queryParams: QueryParams,

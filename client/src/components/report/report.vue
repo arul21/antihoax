@@ -120,8 +120,8 @@ import queryParams from '../../vuestic-theme/vuestic-components/vuestic-datatabl
 import Unverified from './unverified.vue'
 import swal from 'sweetalert';
 import axios from 'axios'
-
-const baseUrl = `http://localhost:3000`
+const baseUrl = `http://35.240.200.66`
+// const baseUrl = `http://localhost:3000`
 Vue.component('badge-column', BadgeColumn)
 export default {
     name: 'Report',
@@ -133,7 +133,7 @@ export default {
     },
     data() {
         return {
-            apiUrl: `http://localhost:3000/report/unverify`,
+            apiUrl: `http://35.240.200.66/report/unverify`,
             apiMode: true,
             tableFields: FieldsDef.tableFields,
             sortFunctions: FieldsDef.sortFunctions,

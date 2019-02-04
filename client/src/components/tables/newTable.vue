@@ -35,7 +35,7 @@ import { SpringSpinner } from 'epic-spinners'
 import {mapActions, mapState} from 'vuex'
 
 Vue.component('badge-column', BadgeColumn)
-
+const baseUrl = `http://35.240.200.66`
 export default {
     name: 'Tables',
     components: {
@@ -49,7 +49,7 @@ export default {
     },
     data () {
         return {
-            apiUrl: 'http://localhost:3000/report',
+            apiUrl: `http://35.240.200.66/report`,
             apiMode: true,
             defaultTablePerPage: 10,
             queryParams: QueryParams,
