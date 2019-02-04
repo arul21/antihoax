@@ -1,3 +1,0 @@
-JWTSECRET=rahasia
-DATABASE=mongodb://antihoax:antihoax123@ds115963.mlab.com:15963/hoax
-PORT=80
