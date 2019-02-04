@@ -56,7 +56,7 @@ reportSchema.pre('save', function(){
         service: 'gmail',
         auth: {
             user: 'stophoax72@gmail.com',
-            pass: 'Kodok1234'
+            pass: ''
         }
     });
     const mailOptions = {
