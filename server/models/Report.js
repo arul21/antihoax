@@ -26,6 +26,10 @@ const reportSchema = new Schema({
         type: String,
         default: 'unverified'
     },
+    keterangan: {
+        type: String,
+        default: 'Belum di periksa admin'
+    },
     deleteAt: {
         type: Date,
         default: null

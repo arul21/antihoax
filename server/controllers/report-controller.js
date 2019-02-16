@@ -119,10 +119,11 @@ module.exports = {
     },
 
     verifyReport: (req, res) =>{
-        Report.updateOne({
+        Report.update({
             _id: req.params.id
         },{
-            status: 'verified'
+            status: 'verified',
+            keterangan: req.body.keterangan
         })
         .then(response =>{
             res.status(201).json(response)
@@ -136,10 +137,11 @@ module.exports = {
     },
 
     unverifyReport: (req, res) =>{
-        Report.updateOne({
+        Report.update({
             _id: req.params.id
         },{
-            status: 'unverified'
+            status: 'unverified',
+            keterangan: req.body.keterangan
         })
         .then(response =>{
             res.status(200).json(response)
@@ -269,4 +271,18 @@ module.exports = {
             res.status(500).json(err)
         })
     },
+
+    addKeterangan: (req, res) =>{
+        Report.findByIdAndUpdate({
+            _id: req.params.id
+        },{
+            keterangan: req.body.keterangan
+        })
+        .then(response =>{
+            res.status(200).json(response)
+        })
+        .catch(err =>{
+            res.status(500).json(err)
+        })
+    }
 }
