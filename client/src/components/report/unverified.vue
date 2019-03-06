@@ -33,6 +33,8 @@
                         </tbody>
                     </table> 
                     </div>
+                    <label for="">Keterangan</label>
+                        <input type="text" class="form-control" v-model="keterangan" ><hr>
                 </div>
                 <div class="text-center" >
                 <button type="button" class="btn btn-primary btn-micro" @click.prevent="unverified">Unverified</button>
@@ -98,7 +100,8 @@ export default {
             defaultTablePerPage: 6,
             queryParams: QueryParams,
             show: false,
-            report: {}
+            report: {},
+            keterangan: ''
         }
     },
 
@@ -155,8 +158,11 @@ export default {
             .then(verify => {
               if (verify) {
                 axios({
-                  method: 'PATCH',
-                  url: baseUrl+`/report/unverify/${verif._id}`
+                    method: 'PATCH',
+                    url: baseUrl+`/report/unverify/${verif._id}`,
+                    data: {
+                        keterangan: this.keterangan
+                    }
                 })
                 .then(response =>{
                     swal("Successfully Verify", {

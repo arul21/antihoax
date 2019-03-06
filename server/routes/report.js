@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {addReport, listReport, findOne, editReport, deleteReport, verifyReport, unverifyReport, getVerified, addKeterangan, getOne, getUnverified} = require('../controllers/report-controller')
+const {addReport, listReport, findOne, getValue, editReport, deleteReport, verifyReport, unverifyReport, getVerified, addKeterangan, getOne, getUnverified} = require('../controllers/report-controller')
 
 router.post('/', addReport)
 router.get('/', listReport)
@@ -12,6 +12,7 @@ router.patch('/unverify/:id', unverifyReport)
 router.get('/verify', getVerified)
 router.get('/unverify', getUnverified)
 router.get('/:url', getOne)
-router.patch('/information/:id', addKeterangan)
+router.patch('/information/:id', addKeterangan),
+router.post('/linkurl', getValue)
 
 module.exports = router;

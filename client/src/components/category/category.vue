@@ -90,7 +90,7 @@ export default {
     },
     data () {
         return {
-            apiUrl: 'http://35.240.200.66/category/api',
+            apiUrl: baseUrl+'/category/api',
             apiMode: true,
             defaultTablePerPage: 30,
             queryParams: QueryParams,

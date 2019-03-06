@@ -14,20 +14,17 @@
                   
                     <label for="exampleFormControlInput2">URL</label>
                     <input type="text" class="form-control" id="exampleFormControlInput2" v-model="editReport.url" disabled><hr>
-                  
-                  
-                    <label for="exampleFormControlInput3">Category</label>
-                    <select class="form-control" v-model="editReport.category" autofocus>
-                        <option class="text-center" v-for="category in categories" :key=category._id :value="category._id"> {{ category.category }} </option>
-                    </select><hr>
-                  
-                  
+              
                     <label for="exampleFormControlInput3">Pelapor</label>
                     <input type="text" class="form-control" id="exampleFormControlInput3" v-model="editReport.reporter" disabled><hr>
                   
                   
                     <label for="exampleFormControlInput4">Email</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput4" v-model="editReport.email" disabled>
+                    <input type="text" class="form-control" id="exampleFormControlInput4" v-model="editReport.email" disabled> <hr>
+                    <label for="exampleFormControlInput3">Category</label>
+                    <select class="form-control" v-model="editReport.category" autofocus>
+                        <option class="text-center" v-for="category in categories" :key=category._id :value="category._id"> {{ category.category }} </option>
+                    </select>
                 </div>
                 <div class="text-center" >
                 <button type="button" class="btn btn-primary btn-micro" @click.prevent="saveUpdate">Save</button>&nbsp; &nbsp;
@@ -67,12 +64,15 @@
                                 <td>{{editReport.status}}</td>
                             </tr>
                         </tbody>
+                        
                     </table> 
-                    </div>
+                   
+                </div>
+                 <label for="">Keterangan</label>
+                    <input type="text" class="form-control" v-model="keterangan"><hr>
                 </div>
                 <div class="text-center" >
                 <button type="button" class="btn btn-primary btn-micro" @click.prevent="verified">Verify</button>&nbsp; &nbsp;
-                
             </div>
             </div>
         </vuestic-modal>
@@ -142,7 +142,8 @@ export default {
             defaultTablePerPage: 6,
             queryParams: QueryParams,
             show: false,
-            editReport: {}
+            editReport: {},
+            keterangan: ''
         }
     },
 
@@ -188,8 +189,11 @@ export default {
             .then(verify => {
               if (verify) {
                 axios({
-                  method: 'PATCH',
-                  url: baseUrl+`/report/verify/${verif._id}`
+                    method: 'PATCH',
+                    url: baseUrl+`/report/verify/${verif._id}`,
+                    data: {
+                        keterangan: this.keterangan
+                    }
                 })
                 .then(response =>{
                     // this.$refs.reportVerified.ontime()

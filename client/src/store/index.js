@@ -136,7 +136,7 @@ const store = new Vuex.Store({
         method: `GET`,
       })
       .then(response =>{
-        commit('categoryList', response.data.data)
+        commit('categoryList', response.data)
       })
       .catch(err =>{
         console.log(err);

@@ -26,26 +26,6 @@
           <span>Report</span>
         </span>
       </sidebar-link>
-      <!-- <sidebar-link-group>
-        <span slot="title">
-          <span
-            class="sidebar-menu-item-icon vuestic-icon vuestic-icon-statistics"></span>
-          <span>{{ $t('menu.statistics') }}</span>
-        </span>
-        <sidebar-link
-          :to="{ name: 'charts' }">
-          <span slot="title">
-            <span>{{ $t('menu.charts') }}</span>
-          </span>
-        </sidebar-link>
-        <sidebar-link
-          :to="{ name: 'progress-bars' }">
-          <span slot="title">
-            <span>{{ $t('menu.progressBars') }}</span>
-          </span>
-        </sidebar-link>
-      </sidebar-link-group> -->
-      
     </template>
   </vuestic-sidebar>
 </template>

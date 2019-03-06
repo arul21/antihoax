@@ -8,9 +8,7 @@
       {{$t('Stop Hoax & Provokasi')}}&nbsp;<a href="mailto:info@antihoax.com">info@antihoax.com</a>
     </span>
 
-    <!-- <message-dropdown class="col nav-item"/>
-    <notification-dropdown class="col nav-item"/> -->
-    <!-- <language-dropdown class="col nav-item"/> -->
+   
     <profile-dropdown class="col nav-item">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5UtRP-NxKMT68qLPtTpJdRV9PQxzQwKgEeVPSoaoOUOyYXTuouA"/>
     </profile-dropdown>

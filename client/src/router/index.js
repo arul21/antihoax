@@ -102,7 +102,7 @@ export default new Router({
               path: 'charts',
               component: lazyLoading('statistics/charts/Charts'),
               meta: {
-                wikiLink: 'https://djaduls-e66e9.firebaseapp.com/',
+                wikiLink: '',
               },
             },
             {
@@ -110,7 +110,7 @@ export default new Router({
               path: 'progress-bars',
               component: lazyLoading('statistics/progress-bars/ProgressBars'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Progress-Bars',
+                wikiLink: '',
               },
             },
           ],
@@ -125,7 +125,7 @@ export default new Router({
               path: 'form-elements',
               component: lazyLoading('forms/form-elements/FormElements'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/inputs',
+                wikiLink: '',
               },
             },
             {
@@ -133,7 +133,7 @@ export default new Router({
               path: 'form-wizards',
               component: lazyLoading('forms/form-wizard/FormWizard'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Wizards',
+                wikiLink: '',
               },
             },
             {
@@ -141,7 +141,7 @@ export default new Router({
               path: 'medium-editor',
               component: lazyLoading('forms/medium-editor/MediumEditor'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Medium-Editor',
+                wikiLink: '',
               },
             },
           ],
@@ -151,7 +151,7 @@ export default new Router({
           path: 'tables',
           component: lazyLoading('tables/Table'),
           meta: {
-            wikiLink: 'https://djaduls-e66e9.firebaseapp.com/',
+            wikiLink: '',
           },
         },
         {
@@ -159,7 +159,7 @@ export default new Router({
           path: 'category',
           component: lazyLoading('category/category'),
           meta: {
-            wikiLink: 'https://djaduls-e66e9.firebaseapp.com/',
+            wikiLink: '',
           },
         },
         {
@@ -167,7 +167,7 @@ export default new Router({
           path: 'report',
           component: lazyLoading('report/report'),
           meta: {
-            wikiLink: 'https://djaduls-e66e9.firebaseapp.com/',
+            wikiLink: '',
           },
         },
         {
@@ -185,7 +185,7 @@ export default new Router({
               path: 'buttons',
               component: lazyLoading('ui/buttons/Buttons'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Buttons',
+                wikiLink: '',
               },
             },
             {
@@ -193,7 +193,7 @@ export default new Router({
               path: 'color-pickers',
               component: lazyLoading('ui/color-pickers/ColorPickers'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Color-Pickers',
+                wikiLink: '',
               },
             },
             {
@@ -201,7 +201,7 @@ export default new Router({
               path: 'timelines',
               component: lazyLoading('ui/timelines/Timelines'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Timelines',
+                wikiLink: '',
               },
             },
             {
@@ -209,7 +209,7 @@ export default new Router({
               path: 'dropdowns',
               component: lazyLoading('ui/dropdowns/Dropdowns'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Dropdowns',
+                wikiLink: '',
               },
             },
             {
@@ -249,7 +249,7 @@ export default new Router({
               path: 'modals',
               component: lazyLoading('ui/modals/Modals'),
               meta: {
-                wikiLink: 'https://github.com/epicmaxco/vuestic-admin/wiki/Modals',
+                wikiLink: '',
               },
             },
             {

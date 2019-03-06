@@ -155,22 +155,6 @@ module.exports = {
     },
 
 
-    // getVerifiedd: (req, res) =>{
-    //     Report.find({
-    //         status: 'verified'
-    //     })
-    //     .populate('category')
-    //     .then(response =>{
-    //         res.status(200).json(response)
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //         res.status(500).json({
-    //             message: err
-    //         })
-    //     })
-    // },
-
     getVerified: (req, res) =>{
         Report.dataTables({
             find: {
@@ -262,10 +246,27 @@ module.exports = {
             } else {
                 res.status(400).json(response)
                 console.log(`ini notfound`);
-                
             }
-            
-            
+        })
+        .catch(err =>{
+            console.log(`ini yang salah`,err)
+            res.status(500).json(err)
+        })
+    },
+
+    getValue: (req, res) =>{
+        Report.findOne({
+            url: req.body.url
+        })
+        .populate('category')
+        .then(response =>{
+            console.log(`ini`,response);
+            if(response){
+                res.status(200).json(response)
+            } else {
+                res.status(400).json(response)
+                console.log(`ini notfound`);
+            }
         })
         .catch(err =>{
             res.status(500).json(err)
@@ -284,5 +285,7 @@ module.exports = {
         .catch(err =>{
             res.status(500).json(err)
         })
-    }
+    },
+
+    
 }

@@ -24,9 +24,6 @@
         <button class="btn btn-primary" @click.prevent="toLogin" type="submit">
           login
         </button>
-        <!-- <router-link class='link flex-center pl-2 text-center' :to="{name: 'signup'}">
-          Create Account
-        </router-link> -->
       </div>
     </form>
   </div>
@@ -51,8 +48,6 @@ export default {
         password: this.password
       }
       this.doLogin(data)
-      // console.log(data);
-      
     }
   },
 }
