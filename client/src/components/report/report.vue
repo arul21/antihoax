@@ -116,8 +116,8 @@ import queryParams from '../../vuestic-theme/vuestic-components/vuestic-datatabl
 import Unverified from './unverified.vue'
 import swal from 'sweetalert'
 import axios from 'axios'
-// const baseUrl = `http://35.240.200.66`
-const baseUrl = `http://localhost:3000`
+const baseUrl = `https://stophoax.arul21.com`
+// const baseUrl = `http://localhost:3000`
 Vue.component('badge-column', BadgeColumn)
 export default {
   name: 'Report',

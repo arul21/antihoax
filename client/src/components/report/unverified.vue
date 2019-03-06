@@ -129,8 +129,8 @@ import { mapActions, mapState } from 'vuex'
 import queryParams from '../../vuestic-theme/vuestic-components/vuestic-datatable/data/query-params'
 import axios from 'axios'
 import swal from 'sweetalert'
-const baseUrl = `http://localhost:3000`
-// const baseUrl = `http://35.240.200.66`
+// const baseUrl = `http://localhost:3000`
+const baseUrl = `https://stophoax.arul21.com`
 Vue.component('badge-column', BadgeColumn)
 export default {
   name: 'Verified',

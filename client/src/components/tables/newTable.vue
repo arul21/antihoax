@@ -35,8 +35,8 @@ import { SpringSpinner } from 'epic-spinners'
 import { mapActions, mapState } from 'vuex'
 
 Vue.component('badge-column', BadgeColumn)
-const baseUrl = `http://localhost:3000`
-// const baseUrl = `http://35.240.200.66`
+// const baseUrl = `http://localhost:3000`
+const baseUrl = `https://stophoax.arul21.com`
 export default {
   name: 'Tables',
   components: {

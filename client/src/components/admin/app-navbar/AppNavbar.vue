@@ -9,7 +9,7 @@
     </span>
 
     <profile-dropdown class="col nav-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5UtRP-NxKMT68qLPtTpJdRV9PQxzQwKgEeVPSoaoOUOyYXTuouA"/>
+      <img src="https://pngimage.net/wp-content/uploads/2018/05/admin-png-4.png"/>
     </profile-dropdown>
   </vuestic-navbar>
 
