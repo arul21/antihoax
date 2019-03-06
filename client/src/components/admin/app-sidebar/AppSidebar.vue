@@ -1,6 +1,6 @@
 <template>
   <vuestic-sidebar :hidden="isOpen">
-    <template slot="menu"> 
+    <template slot="menu">
       <sidebar-link
         :to="{ name: 'dashboard' }">
         <span slot="title">

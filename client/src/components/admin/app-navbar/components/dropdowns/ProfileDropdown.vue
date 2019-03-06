@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {mapActions, mapState} from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'profile-section',
@@ -35,7 +35,6 @@ export default {
     options: {
       type: Array,
       default: () => [
-       
         {
           name: 'logout',
           redirectTo: 'login',
@@ -45,8 +44,8 @@ export default {
   },
   methods: {
     ...mapActions(['logout']),
-    doLogout(){
-      console.log(`masuk`);
+    doLogout () {
+      console.log(`masuk`)
       this.$store.dispatch('logout')
     },
   },

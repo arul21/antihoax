@@ -14,7 +14,6 @@ import DataVisualisationTab
 import DashboardBottomWidgets from './DashboardBottomWidgets.vue'
 import tables from 'src/components/tables/newTable.vue'
 
-
 export default {
   name: 'dashboard',
   components: {

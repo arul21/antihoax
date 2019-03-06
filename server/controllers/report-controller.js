@@ -118,10 +118,32 @@ module.exports = {
         })
     },
 
+    
+
     verifyReport: (req, res) =>{
         Report.update({
             _id: req.params.id
         },{
+            isHoax: `Hoax/Konten Negative`,
+            status: 'verified',
+            keterangan: req.body.keterangan
+        })
+        .then(response =>{
+            res.status(201).json(response)
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                message: err
+            })
+        })
+    },
+
+    verifyNoHoax: (req, res) =>{
+        Report.update({
+            _id: req.params.id
+        },{
+            isHoax: `Aman dari Hoax & Konten Negative`,
             status: 'verified',
             keterangan: req.body.keterangan
         })

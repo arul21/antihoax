@@ -1,5 +1,5 @@
-let baseUrl = `http://35.240.200.66`
-// let baseUrl = `http://localhost:3000`
+// let baseUrl = `http://35.240.200.66`
+let baseUrl = `http://localhost:3000`
 let APIurl = `http://api.linkpreview.net/?key=5c3cd12828c9b6babc4f58d8d2e929d85fc2175025c92&q=`
 
 $(document).ready(function(){

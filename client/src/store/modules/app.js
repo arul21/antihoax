@@ -37,7 +37,7 @@ const actions = {
   isToggleWithoutAnimation ({ commit }, value) {
     commit('TOGGLE_WITHOUT_ANIMATION', value)
   },
-  
+
 }
 
 export default {

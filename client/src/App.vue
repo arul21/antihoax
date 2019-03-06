@@ -8,18 +8,18 @@
 export default {
   name: 'app',
   methods: {
-		cekLogin() {
+    cekLogin () {
       let token = localStorage.getItem('token')
-      if(!token) {
+      if (!token) {
         this.$router.push('auth/login')
       } else {
         // this.$router.push('/')
       }
     },
-	},
-	mounted() {
-		this.cekLogin()
-	}
+  },
+  mounted () {
+    this.cekLogin()
+  }
 }
 </script>
 
@@ -31,5 +31,6 @@ body {
   #app {
     height: 100%;
   }
+  font-size: 12px;
 }
 </style>

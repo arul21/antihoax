@@ -30,6 +30,9 @@ const reportSchema = new Schema({
         type: String,
         default: 'Belum di periksa admin'
     },
+    isHoax: {
+        type: String
+    },
     deleteAt: {
         type: Date,
         default: null

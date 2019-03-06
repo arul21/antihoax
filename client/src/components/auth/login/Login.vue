@@ -1,12 +1,12 @@
 <template>
   <div class="login">
     <h2>{{ $t('auth.welcome') }}</h2>
-    <form method="post" action="/auth/login" name="login">
+    <form method="post" name="login">
       <div class="form-group">
         <div class="input-group">
           <input type="text" id="email" v-model="userName" required="required"/>
           <label class="control-label" for="text">
-           email
+           username
           </label>
           <i class="bar"/>
         </div>
@@ -31,10 +31,10 @@
 
 <script>
 import axios from 'axios'
-import {mapActions, mapState} from 'vuex'
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'login',
-  data() {
+  data () {
     return {
       userName: '',
       password: ''
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     ...mapActions(['doLogin']),
-    toLogin(){
+    toLogin () {
       let data = {
         userName: this.userName,
         password: this.password

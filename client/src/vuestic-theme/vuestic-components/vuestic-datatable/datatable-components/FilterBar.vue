@@ -1,7 +1,7 @@
 <template>
   <div class="form-group with-icon-left">
     <div class="input-group">
-      <input id="input-icon-left" name="input-icon-left" 
+      <input id="input-icon-left" name="input-icon-left"
              v-model="valueProxy" required/>
       <i
         class="glyphicon glyphicon-search icon-left input-icon search-icon"></i>

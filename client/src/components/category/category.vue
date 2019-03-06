@@ -11,7 +11,7 @@
                 <input type="text" class="form-control" v-model="editCategory.category" autofocus>
             </div><hr>
             <div class="text-center" >
-                <button type="button" class="btn btn-micro" @click.prevent="save">Save</button>
+                <button type="button" class="btn btn-success btn-micro" @click.prevent="save">Save</button>
             </div>
         </vuestic-modal>
         <!-- end modal edit -->
@@ -32,6 +32,29 @@
         </vuestic-modal>
         <!-- end modal add -->
 
+        <!-- viewCategory -->
+        <vuestic-modal :show.sync="show"
+            v-bind:small="true" v-bind:force="true" ref="viewCategory"
+            :noButtons="true"
+            :okText="'modal.confirm' | translate">
+            <div slot="title">{{'View Category' | translate}}</div>
+            <div class="text-center">
+                <table class="table table-striped">
+                        <tbody>
+                             <tr>
+                                <th scope="row">Title</th>
+                                <td>{{editCategory.category}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Last update</th>
+                                <td>{{editCategory.updatedAt}}</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div><hr>
+        </vuestic-modal>
+        <!-- viewCategory -->
+
         <div class="va-row">
             <div class="flex md12 xs12">
                 <vuestic-widget :headerText="$t('Manage Category')">
@@ -48,7 +71,7 @@
                         :queryParams="queryParams"
                         :editRow="editRow"
                         :deleteRow="deleteRow"
-                        
+                        :viewRow="viewCat"
                     >
                         <spring-spinner
                         slot="loading"
@@ -56,7 +79,7 @@
                         :size="70"
                         color="#4ae387"
                         />
-                        
+
                     </vuestic-data-table>
                 </vuestic-widget>
             </div>
@@ -69,128 +92,131 @@ import Vue from 'vue'
 import BadgeColumn from './BadgeColumn.vue'
 import QueryParams from '../../vuestic-theme/vuestic-components/vuestic-datatable/data/query-params'
 import { SpringSpinner } from 'epic-spinners'
-import {mapActions, mapState} from 'vuex'
-import swal from 'sweetalert';
+import { mapActions, mapState } from 'vuex'
+import swal from 'sweetalert'
 import axios from 'axios'
 
-// const baseUrl = `http://localhost:3000`
-const baseUrl = `http://35.240.200.66`
+const baseUrl = `http://localhost:3000`
+// const baseUrl = `http://35.240.200.66`
 Vue.component('badge-column', BadgeColumn)
 
 export default {
-    name: 'category',
-    components: {
-        SpringSpinner,
-    },
-    methods: {
+  name: 'category',
+  components: {
+    SpringSpinner,
+  },
+  methods: {
 
-    },
-    computed: {
-        ...mapState(['data'])
-    },
-    data () {
-        return {
-            apiUrl: baseUrl+'/category/api',
-            apiMode: true,
-            defaultTablePerPage: 30,
-            queryParams: QueryParams,
-            tableFields: [{
-                name: 'category', // Object property name in your data e.g. (data[0].name)
-                sortField: 'category', // Object property name in your data which will be used for sorting
-            },{
-                name: 'createdAt',
-                title: 'Last Update'
-            },'__slot:actions',
-            ],
-            itemsPerPage: [{  // values in dropdown "Items Per Page"
-                value: 5
-            },
-            {
-                value: 6
-            },
-            {
-                value: 10
-            }],
-            sortFunctions: {       // use custom sorting functions for prefered fields
-                'category': function (item1, item2) {
-                    return item1 >= item2 ? 1 : -1
-                },
-                'category': function (item1, item2) {
-                    return item1 >= item2 ? 1 : -1
-                }
-            },
-            paginationPath: '',
-            show: true,
-            editCategory: {},
-            category:''
+  },
+  computed: {
+    ...mapState(['data'])
+  },
+  data () {
+    return {
+      apiUrl: baseUrl + '/category/api',
+      apiMode: true,
+      defaultTablePerPage: 30,
+      queryParams: QueryParams,
+      tableFields: [{
+        name: 'category', // Object property name in your data e.g. (data[0].name)
+        sortField: 'category', // Object property name in your data which will be used for sorting
+      }, {
+        name: 'createdAt',
+        title: 'Last Update'
+      }, '__slot:actions',
+      ],
+      itemsPerPage: [{ // values in dropdown "Items Per Page"
+        value: 5
+      },
+      {
+        value: 6
+      },
+      {
+        value: 10
+      }],
+      sortFunctions: { // use custom sorting functions for prefered fields
+        'category': function (item1, item2) {
+          return item1 >= item2 ? 1 : -1
+        },
+        'category': function (item1, item2) {
+          return item1 >= item2 ? 1 : -1
         }
+      },
+      paginationPath: '',
+      show: true,
+      editCategory: {},
+      category: ''
+    }
+  },
+  methods: {
+    ...mapActions(['updateCategory', 'addCategory']),
+
+    editRow (rowData) {
+      this.showStaticModal(rowData)
+      this.editCategory = rowData
+      this.$refs.category.ontime()
     },
-    methods: {
-        ...mapActions(['updateCategory', 'addCategory']),
 
-        editRow(rowData){
-            this.showStaticModal(rowData)
-            this.editCategory = rowData
-            this.$refs.category.ontime()
-        },
-
-        deleteRow(rowData){
-            swal({
-                title: "Are you sure?",
-                text: "remove this data?",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then(willDelete => {
-                if (willDelete) {
-                    axios({
-                        method: 'DELETE',
-                        url: baseUrl+`/category/${rowData._id}`
-                    })
-                    .then(response =>{
-                        this.$refs.category.ontime()
-                        swal("Data has been removed!", {
-                            icon: "success",
-                        });
-                    })
-
-                }else {
-                    swal(`Data is safe!`);
-                }
-            })
-            .catch(err =>{
-                console.log(err);
-            })
-        },
-        
-        
-        showStaticModal(id) {
-            this.$refs.staticModal.open()
-        },
-
-        save(){
-            let data = this.editCategory
-            this.updateCategory(data)
-            this.$refs.staticModal.close()
-        },
-
-        addCat(){
-            this.$refs.addCat.open()
-        },
-
-        saveCategory(){
-            let data = {category: this.category}
-            this.addCategory(data)
-            this.$refs.addCat.close()
-            this.category = ''
-            this.$refs.category.ontime()
-        },
-
-        onUpdate() {
-            this.$refs.category.ontime()
-        }
+    viewCat (rowData) {
+      this.editCategory = rowData
+      this.$refs.viewCategory.open()
     },
+
+    deleteRow (rowData) {
+      swal({
+        title: 'Are you sure?',
+        text: 'remove this data?',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+      })
+        .then(willDelete => {
+          if (willDelete) {
+            axios({
+              method: 'DELETE',
+              url: baseUrl + `/category/${rowData._id}`
+            })
+              .then(response => {
+                this.$refs.category.ontime()
+                swal('Data has been removed!', {
+                  icon: 'success',
+                })
+              })
+          } else {
+            swal(`Data is safe!`)
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
+
+    showStaticModal (id) {
+      this.$refs.staticModal.open()
+    },
+
+    save () {
+      let data = this.editCategory
+      this.updateCategory(data)
+      this.$refs.staticModal.close()
+    },
+
+    addCat () {
+      this.$refs.addCat.open()
+    },
+
+    saveCategory () {
+      let data = { category: this.category }
+      this.addCategory(data)
+      this.$refs.addCat.close()
+      this.category = ''
+      this.$refs.category.ontime()
+    },
+
+    onUpdate () {
+      this.$refs.category.ontime()
+    }
+  },
 }
 </script>
 
@@ -210,11 +236,3 @@ export default {
 }
 
 </style>
-
-
-
-
-
-
-
-

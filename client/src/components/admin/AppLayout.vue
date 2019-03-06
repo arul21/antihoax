@@ -17,7 +17,7 @@
       <router-view/>
     </main>
     <span slot="footer">
-      ©2018. Made by&nbsp;<a href="#" target="_blank">djaduls</a>
+      ©2019. Made by&nbsp;<a href="/" target="_blank">anti-hoax</a>
     </span>
   </vuestic-layout>
 </template>

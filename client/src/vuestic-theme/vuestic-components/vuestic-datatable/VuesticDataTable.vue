@@ -52,16 +52,13 @@
     >
       <template slot="actions" scope="props">
         <div class="table-button-container">
+          <a href="" @click.prevent="viewRow(props.rowData)">
+            <span class="fa fa-eye"></span></a>&nbsp;&nbsp;
           <a href="" @click.prevent="editRow(props.rowData)">
             <span class="glyphicon glyphicon-pencil"></span></a>&nbsp;&nbsp;
           <a href="" @click.prevent="deleteRow(props.rowData)">
             <span class="glyphicon glyphicon-trash"></span> </a>&nbsp;&nbsp;
-            <!-- <div id="verify">
-              <a href="" class="testhide" @click.prevent="update(props.rowData)">
-                <span class="glyphicon glyphicon-retweet"></span> </a>&nbsp;&nbsp;
-            </div> -->
         </div>
-        
       </template>
     </vuetable>
     <div class="flex-center">
@@ -96,16 +93,19 @@ export default {
     ItemsPerPage,
   },
   props: {
-    rowData:{
+    rowData: {
       type: String
     },
-    editRow:{
+    editRow: {
       type: Function
     },
-    deleteRow:{
+    viewRow: {
       type: Function
     },
-    update:{
+    deleteRow: {
+      type: Function
+    },
+    update: {
       type: Function
     },
     apiUrl: {
@@ -288,7 +288,7 @@ export default {
       this.perPage = itemsPerPageValue
       Vue.nextTick(() => this.$refs.vuetable.refresh())
     },
-    ontime(itemsPerPageValue) {
+    ontime (itemsPerPageValue) {
       Vue.nextTick(() => this.$refs.vuetable.refresh())
     },
     onPaginationData (paginationData) {
